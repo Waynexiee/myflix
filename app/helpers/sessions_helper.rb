@@ -15,4 +15,8 @@ module SessionsHelper
     session[:user_id] = nil
     @current_user = nil
   end
+
+  def require_user
+    redirect_to sign_in_path unless logged_in?
+  end
 end
