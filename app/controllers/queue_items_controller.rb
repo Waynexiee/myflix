@@ -24,14 +24,21 @@ class QueueItemsController < ApplicationController
       render "index"
     else
       QueueItem.find_by(params[:order]).delete
-      unless QueueItem.all.empty?
-        temp = QueueItem.all.map(&:video)
-        QueueItem.delete_all
-        temp.each {|e| queue_create(e.id)}
-      end
+      current_user.queue_nomalize
       flash[:success] = "Delete video successfully!"
       redirect_to my_queue_path
     end
+  end
+
+  def update_queue
+    begin
+      update_rating
+      queue_reorder
+      current_user.queue_nomalize
+    rescue ActiveRecord::RecordInvalid
+      flash[:error] = "Invalid input!"
+    end
+    redirect_to my_queue_path
   end
 
   private
@@ -50,5 +57,24 @@ class QueueItemsController < ApplicationController
 
   def queue_create(id)
     QueueItem.create(order: next_id, video_id: id, user: current_user )
+  end
+
+  def queue_reorder
+    ActiveRecord::Base.transaction do
+      params[:queue_items].each do |queue_item|
+        item = QueueItem.find(queue_item["id"])
+        item.update_attributes!(order: queue_item["order"]) if item.user == current_user
+      end
+    end
+  end
+
+  def update_rating
+    params[:queue_items].each do |queue_item|
+      item = QueueItem.find(queue_item["id"])
+      reviews = item.user.reviews.where(video_id: item.video.id)
+      reviews.each do |review|
+        review.update_attributes!(score: queue_item["score"]) if item.user == current_user
+      end
+    end
   end
 end

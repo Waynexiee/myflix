@@ -6,12 +6,12 @@
           %h1 Sign in
         %fieldset
           .form-group
-            %label Email Address
+            =f.label :email, "Email Address"
             .row
               .col-sm-4
                 =f.email_field :email, class: "form-control", type: "email"
           .form-group
-            %label Password
+            =f.label :password, "Password"
             .row
               .col-sm-4
                 =f.password_field :password, class: "form-control", type: "password"
