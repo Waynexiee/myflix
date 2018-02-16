@@ -14,5 +14,9 @@ Myflix::Application.configure do
   config.action_controller.allow_forgery_protection    = false
 
   config.action_mailer.delivery_method = :test
+  config.action_mailer.raise_delivery_errors = true
+  host = 'localhost:3000' # Don't use this literally; use your local dev host instead
+  config.action_mailer.default_url_options = { host: host, protocol: 'http' }
+
   config.active_support.deprecation = :stderr
 end
