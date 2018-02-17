@@ -32,8 +32,10 @@ group :test do
   gem 'shoulda-matchers', '2.7.0'
   gem 'vcr', '2.9.3'
   gem 'capybara'
+  gem 'capybara-email'
 end
 
 group :production do
+  gem 'pg'
   gem 'rails_12factor'
 end
