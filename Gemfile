@@ -12,7 +12,7 @@ gem 'bootstrap_form'
 gem 'bcrypt'
 gem 'fabrication'
 gem 'faker'
-
+gem "pg"
 group :development do
   gem 'thin'
   gem "better_errors"
@@ -36,6 +36,6 @@ group :test do
 end
 
 group :production do
-  gem 'pg'
+  gem "pg"
   gem 'rails_12factor'
 end
