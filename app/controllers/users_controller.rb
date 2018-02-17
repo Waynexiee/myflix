@@ -10,6 +10,7 @@ class UsersController < ApplicationController
       AppMailer.send_welcome_email(@user).deliver
       redirect_to sign_in_path
     else
+      flash[:failure] = "Your input is invalid!"
       render 'new'
     end
   end
