@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.2.9'
 
+
 gem 'bootstrap-sass', '3.1.1.1'
 gem 'coffee-rails'
 gem 'rails', '4.1.1'
@@ -12,7 +13,7 @@ gem 'bootstrap_form'
 gem 'bcrypt'
 gem 'fabrication'
 gem 'faker'
-gem "pg"
+
 group :development do
   gem 'thin'
   gem "better_errors"
@@ -36,6 +37,6 @@ group :test do
 end
 
 group :production do
-  gem "pg"
+  gem 'pg', '~> 0.20'
   gem 'rails_12factor'
 end

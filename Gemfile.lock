@@ -106,7 +106,7 @@ GEM
     minitest (5.11.3)
     nokogiri (1.8.2)
       mini_portile2 (~> 2.3.0)
-    pg (1.0.0)
+    pg (0.21.0)
     polyglot (0.3.5)
     pry (0.10.4)
       coderay (~> 1.1.0)
@@ -219,7 +219,7 @@ DEPENDENCIES
   haml-rails
   jquery-rails
   letter_opener
-  pg
+  pg (~> 0.20)
   pry
   pry-nav
   rails (= 4.1.1)
