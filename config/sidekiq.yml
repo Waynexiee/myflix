@@ -1,5 +1,5 @@
 :verbose: false
-:concurrency: 10
+:concurrency: 2
 
 # Set timeout to 8 on Heroku, longer if you manage your own systems.
 :timeout: 30
@@ -15,6 +15,6 @@
 
 # you can override concurrency based on environment
 production:
-  :concurrency: 25
+  :concurrency: 2
 staging:
-  :concurrency: 15
+  :concurrency: 2
