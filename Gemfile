@@ -21,6 +21,7 @@ gem 'mini_magick'
 gem 'elasticsearch-model'
 gem 'elasticsearch-rails'
 gem 'fog'
+gem 'puma'
 
 group :development do
   gem 'thin'
