@@ -20,7 +20,7 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'elasticsearch-model'
 gem 'elasticsearch-rails'
-gem 'fog-aws'
+gem 'fog'
 
 group :development do
   gem 'thin'
