@@ -8,7 +8,7 @@ CarrierWave.configure do |config|
     }
     config.storage = :fog
     config.fog_directory    = ENV['S3_BUCKET_NAME']
-    config.s3_access_policy = :public_read                          # Generate http:// urls. Defaults to :authenticated_read (https://)
+    config.fog_public = false                         # Generate http:// urls. Defaults to :authenticated_read (https://)
     config.fog_host         = "#{ENV['S3_ASSET_URL']}/#{ENV['S3_BUCKET_NAME']}"
   else
     config.storage = :file
