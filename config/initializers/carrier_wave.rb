@@ -9,7 +9,7 @@ CarrierWave.configure do |config|
     config.storage = :fog
     config.fog_directory    = ENV['S3_BUCKET_NAME']
     config.fog_public = false                         # Generate http:// urls. Defaults to :authenticated_read (https://)
-    config.fog_host         = "#{ENV['S3_ASSET_URL']}/#{ENV['S3_BUCKET_NAME']}"
+    config.asset_host         = ENV['S3_ASSET_URL']
   else
     config.storage = :file
     config.enable_processing = Rails.env.development?
