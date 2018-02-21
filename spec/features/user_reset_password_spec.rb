@@ -4,7 +4,7 @@ feature "User resets password" do
   scenario 'user successfully resets the password' do
     jack = Fabricate(:user)
     visit sign_in_path
-    click_link "Reset Password"
+    click_link "Forget Password"
     fill_in "Email Address", with: jack.email
     click_button "Send Email"
 

@@ -9,6 +9,7 @@ Myflix::Application.routes.draw do
   resources :videos, only: [:show, :index] do
     collection do
       get :search, to: 'videos#search'
+      get :advanced_search, to: 'videos#advanced_search'
     end
     resources :reviews, only: [:create]
   end
@@ -27,5 +28,7 @@ Myflix::Application.routes.draw do
   resources :password_resets,  only: [:new, :create, :edit, :update]
   resources :users
   resources :people, controller: :friendships
-  resources :invitations, only: [:new, :create]
+  namespace :admin do
+    resources :videos
+  end
 end

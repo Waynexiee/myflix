@@ -75,7 +75,7 @@ class User < ActiveRecord::Base
   end
 
   def send_password_reset_email
-    AppMailer.password_reset(self).deliver
+    AppMailer.delay.password_reset(self, self.reset_token)
   end
 
   def authenticated?(token)
@@ -87,6 +87,6 @@ class User < ActiveRecord::Base
   end
 
   def send_invitation_email(user)
-    AppMailer.send_invitation_email(user).deliver
+    AppMailer.delay.send_invitation_email(user)
   end
 end

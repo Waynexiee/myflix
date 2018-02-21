@@ -1,5 +1,5 @@
 class VideosController < ApplicationController
-  before_filter :logged_in, only: [:index, :show, :search]
+  before_action :logged_in, only: [:index, :show, :search]
   def index
     @categories = Category.all
     render 'home'
@@ -14,9 +14,20 @@ class VideosController < ApplicationController
     @videos = Video.search_by_title(params[:search])
   end
 
-  def front
+  def advanced_search
+    options = {
+      reviews: params[:reviews],
+      rating_from: params[:rating_from],
+      rating_to: params[:rating_to]
+    }
 
+    if params[:query]
+      @videos = Video.search(params[:query],options).records.to_a
+    else
+      @videos = []
+    end
   end
+
 
   private
 

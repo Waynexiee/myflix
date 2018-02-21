@@ -13,6 +13,13 @@ gem 'bootstrap_form'
 gem 'bcrypt'
 gem 'fabrication'
 gem 'faker'
+gem 'sidekiq'
+gem 'stripe'
+gem 'figaro'
+gem 'carrierwave'
+gem 'mini_magick'
+gem 'elasticsearch-model'
+gem 'elasticsearch-rails'
 
 group :development do
   gem 'thin'
