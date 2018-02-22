@@ -2,7 +2,8 @@
 A website used to see movies and shows(like Netflix).
 
 ## Demo 
-https://aqueous-spire-83196.herokuapp.com/
+https://aqueous-spire-83196.herokuapp.com/ 
+
 You could use Credit Card number 4242424242424242 to pay for sign-on fee.
 
 ## Goal
@@ -29,8 +30,8 @@ Users could follow other users and could see their reviews and video queue.
 * Built on [Ruby on Rails](http://rubyonrails.org/ "Rails")
 * [Bootstrap](https://getbootstrap.com/ "Bootstrap") for CSS
 * Mail sent with [Mailgun](https://www.mailgun.com/)
-* Background jobs processed with[Sidekiq](https://github.com/mperham/sidekiq)
-* Advanced Search implemented with[ElasticSearch](https://www.elastic.co/)
+* Background jobs processed with [Sidekiq](https://github.com/mperham/sidekiq)
+* Advanced Search implemented with [ElasticSearch](https://www.elastic.co/)
 
 
 ## License
