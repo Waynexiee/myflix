@@ -9,7 +9,7 @@ You could use Credit Card number 4242424242424242 to pay for sign-on fee.
 ## Goal
 1. Practice user authentication, password reset, elastic search and payment using Ruby on Rails.  
 2. Study how to deploy an application on Heroku with add-ons and communicate with AWS S3.  
-3. Study develop using TDD. 
+3. Study how to develop using TDD. 
 
 ## environment   
 Ruby 2.2.9  
