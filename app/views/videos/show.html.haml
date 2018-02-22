@@ -11,7 +11,7 @@
         %p
           =@video.description
         .actions
-          =link_to "Watch Now", @video.video_url, class: "btn btn-primary" ,target: "_blank"
+          =link_to "Watch Now", watch_video_path(url: @video.video_url), class: "btn btn-primary" ,target: "_blank"
           =link_to "+ My Queue", my_queue_path(video_id: @video.id), method: "post", class: "btn btn-primary" unless current_user.queued_video?(@video)
 %section.reviews.container
   .row

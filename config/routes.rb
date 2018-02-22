@@ -25,6 +25,7 @@ Myflix::Application.routes.draw do
   post '/update_queue', to: 'queue_items#update_queue'
   get '/confirm_password_reset', to: 'pages#confirm_password_reset'
   get '/token_expired', to: 'pages#token_expired'
+  get '/watch_video', to: 'watch_videos#watch'
   resources :password_resets,  only: [:new, :create, :edit, :update]
   resources :users
   resources :people, controller: :friendships

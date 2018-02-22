@@ -1,8 +1,7 @@
 module ApplicationHelper
   def redefine_url(url)
     ret = url.split("/")
-    ret[0] += "herokuapp.com"
-    ret.join("/")
-    ret
+    ret[1] += "herokuapp.com"
+    return ret.join("/")
   end
 end
