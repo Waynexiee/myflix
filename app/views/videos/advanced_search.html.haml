@@ -1,7 +1,7 @@
 %section.advanced_search.container
   = form_tag advanced_search_videos_path, class: "form-horizontal", method: :get do
     %header
-      %h1 Advanced Search
+      %h1 Advanced Search(Now only support local environment for it costs a lot on heroku.)
     .form-group
       .col-sm-6
         = text_field_tag :query, params[:query], placeholder: "Search videos by title, description", class: "form-control"
