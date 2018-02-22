@@ -7,10 +7,11 @@ https://aqueous-spire-83196.herokuapp.com/
 You could use Credit Card number 4242424242424242 to pay for sign-on fee.
 
 ## Goal
-Practice user authentication, password reset, elastic search and payment using Ruby on Rails.  
-Study how to deploy an application on Heroku with add-ons and communicate with AWS S3.  
-Study develop using TDD.  
-##environment   
+### Practice user authentication, password reset, elastic search and payment using Ruby on Rails.  
+### Study how to deploy an application on Heroku with add-ons and communicate with AWS S3.  
+### Study develop using TDD. 
+
+## environment   
 Ruby 2.2.9  
 Rails 4.4.1  
 Rspec 2.99
