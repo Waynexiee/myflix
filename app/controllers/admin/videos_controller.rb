@@ -16,17 +16,18 @@ class Admin::VideosController < ApplicationController
       render "new"
     end
   end
+
   private
 
-  def require_admin
-    if !current_user.admin?
-      flash[:error] = "You are not admin and not allowed to do it!"
-      redirect_to videos_path
+    def require_admin
+      if !current_user.admin?
+        flash[:error] = "You are not admin and not allowed to do it!"
+        redirect_to videos_path
+      end
     end
-  end
 
-  def video_params
-    params.require(:video).permit(:category_id, :title, :description, :video_url, :larger_cover_url, :smaller_cover_url)
-  end
+    def video_params
+      params.require(:video).permit(:category_id, :title, :description, :video_url, :larger_cover_url, :smaller_cover_url)
+    end
 
 end

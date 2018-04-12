@@ -8,7 +8,7 @@ class ReviewsController < ApplicationController
       redirect_to @video
     else
       @reviews = @video.reviews.reload
-      flash[:error] = "invlid rate!"
+      flash.now[:error] = "invlid rate!"
       render "videos/show"
     end
   end

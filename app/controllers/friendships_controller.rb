@@ -15,7 +15,6 @@ class FriendshipsController < ApplicationController
       @followings = current_user.friendships || []
       render "friendships/index"
     end
-
   end
 
   def destroy
