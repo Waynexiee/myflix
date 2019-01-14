@@ -1,6 +1,6 @@
 # MyFlix
 A website used to see movies and shows(like Netflix).
-I have rewriten this website using Rails API mode and React/Redux.
+I am rewriting this website using Rails API mode and React/Redux.
 
 ## Demo 
 https://aqueous-spire-83196.herokuapp.com/ 
