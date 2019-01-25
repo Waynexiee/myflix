@@ -74,7 +74,8 @@ class QueueItemsController < ApplicationController
       reviews = item.user.reviews.where(video_id: item.video.id)
       reviews.each do |review|
         if item.user == current_user
-          puts review.update_attributes!(score: queue_item["score"].to_i)
+          p review
+          review.update_attributes!(score: queue_item["score"].to_i)
         end
       end
     end
