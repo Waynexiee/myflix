@@ -13,6 +13,6 @@ class QueueItem < ActiveRecord::Base
 
   def video_score
     return nil if user.reviews.empty?
-    user.reviews.find_by(video: video_id).score
+    user.reviews.find_by(video: video.id).score
   end
 end
