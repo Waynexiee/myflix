@@ -12,7 +12,7 @@
       - @followings.each do |following|
         %tr
           %td
-            %img(src="http://www.gravatar.com/avatar/#{Digest::MD5.hexdigest(following.user.email.downcase)}?s=40")
+            %img(src="http://www.gravatar.com/avatar/#{Digest::MD5.hexdigest(following.friend.email.downcase)}?s=40")
             = link_to following.friend.name, following.friend
           %td.extra-padding=following.friend.queue_item_count
           %td.extra-padding=Friendship.count(:conditions => "friend_id = #{following.friend.id}")
