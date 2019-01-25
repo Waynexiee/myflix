@@ -5,11 +5,11 @@ class FriendshipsController < ApplicationController
   end
 
   def create
-    @friendship = Friendship.new(user:current_user, friend_id:params[:friend_id])
+    @friendship = Friendship.new(user:current_user, friend_id:params[:user_id])
 
-    if current_user.can_follow?(User.find(params[:friend_id])) && @friendship.save
+    if current_user.can_follow?(User.find(params[:user_id])) && @friendship.save
       flash[:success] = "Follow successfully!"
-      redirect_to users_path(params[:friend_id])
+      redirect_to users_path(params[:user_id])
     else
       flash[:error] = "Follow failed!"
       @followings = current_user.friendships || []
