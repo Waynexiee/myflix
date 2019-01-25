@@ -9,7 +9,7 @@ class FriendshipsController < ApplicationController
 
     if current_user.can_follow?(User.find(params[:friend_id])) && @friendship.save
       flash[:success] = "Follow successfully!"
-      redirect_to people_path
+      redirect_to users_path(params[:friend_id])
     else
       flash[:error] = "Follow failed!"
       @followings = current_user.friendships || []
