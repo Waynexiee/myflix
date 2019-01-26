@@ -9,7 +9,7 @@
       %li= link_to "Advanced Search", advanced_search_videos_path
     =form_tag search_videos_path, method: :get, class:"col-md-4 navbar-form" do
       .form-group
-        %input.form-control(name="search" type="text" placeholder="Search for videos here")
+        %input.form-control(name="search" type="text" placeholder="Search for videos(case-sensitive)")
       %button.btn.btn-default(type="submit") Search
     #user_links.pull-right
       %ul
