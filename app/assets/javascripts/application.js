@@ -14,4 +14,4 @@
 //= require jquery_ujs
 //= require bootstrap
 
-$(".alert" ).fadeOut(3000);
+
