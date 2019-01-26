@@ -71,12 +71,11 @@ class QueueItemsController < ApplicationController
   def update_rating
     params[:queue_items].each do |queue_item|
       item = QueueItem.find(queue_item["id"].to_i)
-      reviews = item.user.reviews.where(video_id: item.video.id)
-      reviews.each do |review|
-        if review.user == current_user
-          p review
-          review.update_attributes!(score: queue_item["score"].to_i)
-        end
+      review = item.user.reviews.find_by(video_id: item.video_id)
+      if review
+        review.update_attributes!(score: queue_item["score"].to_i)
+      else
+        Review.create(score: queue_item["score"].to_i, video_id: item.video_id, user_id: current_user.id)
       end
     end
   end
