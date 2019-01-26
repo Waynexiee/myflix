@@ -23,7 +23,7 @@ class QueueItemsController < ApplicationController
       @queue_items = current_user.queue_items || []
       render "index"
     else
-      QueueItem.find_by(params[:order]).delete
+      QueueItem.find(params[:order]).delete
       current_user.queue_nomalize
       flash[:success] = "Delete video successfully!"
       redirect_to my_queue_path
