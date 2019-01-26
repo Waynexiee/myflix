@@ -75,7 +75,7 @@ class QueueItemsController < ApplicationController
       if review
         review.update_attributes!(score: queue_item["score"].to_i)
       else
-        Review.create(score: queue_item["score"].to_i, video_id: item.video_id, user_id: current_user.id)
+        Review.create(score: queue_item["score"].to_i, video_id: item.video_id, user_id: current_user.id, content: "good")
       end
     end
   end
