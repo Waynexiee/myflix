@@ -16,4 +16,8 @@ class QueueItem < ActiveRecord::Base
     review = user.reviews.find_by(video_id: video.id)
     review.nil? ? nil : review.score
   end
+
+  def video_url
+    video.video_url
+  end
 end
